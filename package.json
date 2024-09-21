@@ -1,0 +1,27 @@
+{
+  "name": "fleximatch",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "Belinda Merkle",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "start": "node ./src/scripts/matchData.mjs",
+    "normalize": "node ./src/scripts/normalizeData.mjs",
+    "intermediateToCSV": "node ./src/scripts/intermediateToCSV.mjs",
+    "intermediateStats": "node ./src/scripts/calculateIntermediateStats.mjs",
+    "concatRuns": "node ./src/scripts/concatRuns.mjs",
+    "concatRunsReversed": "node ./src/scripts/concatRunsReversed.mjs"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0 || ^8.2.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "fuzzball": "^2.1.2",
+    "lodash": "^4.17.21",
+    "nanoid": "^4.0.2"
+  }
+}

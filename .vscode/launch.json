@@ -1,0 +1,117 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run data normalization",
+      "request": "launch",
+      "runtimeArgs": [
+        "run-script",
+        "normalize"
+      ],
+      "runtimeExecutable": "npm",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "type": "node"
+    },
+    {
+      "name": "Calculate intermediate stats",
+      "request": "launch",
+      "runtimeArgs": [
+        "run-script",
+        "intermediateStats"
+      ],
+      "runtimeExecutable": "npm",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "type": "node"
+    },
+    {
+      "name": "Run matching",
+      "request": "launch",
+      "runtimeArgs": [
+        "run-script",
+        "start"
+      ],
+      "runtimeExecutable": "npm",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "type": "node"
+    },
+    {
+      "name": "Intermediate to CSV",
+      "request": "launch",
+      "runtimeArgs": [
+        "run-script",
+        "intermediateToCSV",
+        "${input:pickIntermediate}"
+      ],
+      "runtimeExecutable": "npm",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "type": "node",
+    },
+    {
+      "name": "Run and concat multiple cycles",
+      "request": "launch",
+      "runtimeArgs": [
+        "run-script",
+        "concatRuns"
+      ],
+      "runtimeExecutable": "npm",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "type": "node",
+    },
+    {
+      "name": "Run and concat multiple cycles (reversed)",
+      "request": "launch",
+      "runtimeArgs": [
+        "run-script",
+        "concatRunsReversed"
+      ],
+      "runtimeExecutable": "npm",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "type": "node",
+    }
+  ],
+  "inputs": [
+    {
+      "id": "pickIntermediate",
+      "description": "Select intermediate",
+      "type": "pickString",
+      "options": [
+        "stats",
+        "concatRunsResult",
+        "concatRunsReversedResult",
+        "leistung",
+        "osa_live",
+        "OSA_live_012",
+        "OSA_live_3",
+        "osa_live_t1234_leistung",
+        "osa_live_t234",
+        "osa_live_t234_leistung",
+        "t1distinct",
+        "t1osa",
+        "t234",
+        "t2distinct",
+        "t2osa",
+        "t34",
+        "t3distinct",
+        "t3osa",
+        "t4distinct",
+        "t4osa"
+      ],
+      "default": "osa_live_t1234_leistung"
+  }
+  ]
+}
